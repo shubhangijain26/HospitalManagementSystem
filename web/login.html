@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login form</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+
+  	 body{
+  	 	margin: 0;
+  	 }
+    .background{
+    		width: 100%;
+  			height: 100%;
+  			background-image: url("imgs/bg2.jpg");
+  			background-size: cover;
+  			background-repeat: no-repeat;
+  			position: absolute;
+ 		    left: 0px;
+			top: 0px;
+			z-index: -1;
+			filter: blur(2px);
+    }
+    .display{
+    		z-index: 1;
+    		position: relative;
+    		top: 100px;
+        }
+    form, h3,a{
+    	color: white;
+    }
+
+    @keyframes ani1{
+    	0%{
+    		transform: translate(0px,-250px);
+    	}
+    	100%{
+    		transform: translate(0px,0px);
+    	}
+    }
+    @keyframes ani2{
+    	0%{
+    		transform: translate(0px,250px);
+    	}
+    	100%{
+    		transform: translate(0px,0px);
+    	}
+    }
+    #signIn{
+    	animation-name: ani1;
+    	animation-duration: 1s;
+    }
+    #signUp{
+    	animation-name: ani2;
+    	animation-duration: 1s;
+    }
+   </style>
+
+   <script type="text/javascript">
+   	function signUp(){
+   		document.getElementById("signIn").style.display="none";
+   		document.getElementById("signUp").style.display="block";
+   	}
+   	 	function signIn(){
+   		document.getElementById("signIn").style.display="block";
+   		document.getElementById("signUp").style.display="none";
+   	}
+   </script>
+</head>
+<body>
+	<div class="container">
+		<div class="background"></div>
+		<div class="display">
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6" style="background-color: rgba(0,0,0,.2);padding: 20px" id="signIn">
+						<h3 align="center">Sign In</h3>
+						<form action="LoginServlet" method="post">
+							  <div class="form-group">
+							    <label for="email">Email address:</label>
+                                                            <input type="email" class="form-control" name="email" required>
+							  </div>
+							  <div class="form-group">
+							    <label for="pwd">Password:</label>
+							    <input type="password" class="form-control" name="pwd" required>
+							  </div>
+							  Choose Account Type:
+							  <select class="form-control sel" name="utype">
+                                                          <option class="a">Doctor</option>
+                                                          <option class="a">Patient</option>
+                                                          <option class="a">Admin</option>
+                                                          </select>
+							  <div class="checkbox">
+							    <label><input type="checkbox"> Remember me</label>
+							  </div>
+							  <button type="submit" class="btn btn-default">Submit</button>
+							   &nbsp &nbsp &nbsp <a href="#">Forgot password?</a>
+							   <br><br>
+							   <div>
+							   	<p>New User?<a href="#" onclick="signUp()">Sign up here</a></p>
+							   </div>
+						</form>
+				</div>
+
+				<div class="col-sm-6" style="background-color: rgba(0,0,0,.2); padding: 20px; display:none" id="signUp">
+						<h3 align="center">Sign Up</h3>
+						<form action="SignupServlet" method="post">
+							  <div class="form-group">
+							    <label for="name">Full Name:</label>
+							    <input type="text" class="form-control" name="username" required>
+							  </div>
+							  <div class="form-group">
+							    <label for="email">Email address:</label>
+							    <input type="email" class="form-control"  name="uemail" required>
+							  </div>
+							  <div class="form-group">
+							    <label for="pwd">Password:</label>
+							    <input type="password" class="form-control" name="pass" required>
+							  </div>
+							   Choose Account Type:
+							  <select class="form-control sel" name="usertype">
+                                                          <option class="a">Doctor</option>
+                                                          <option class="a">Patient</option>
+                                                          <option class="a">Admin</option>
+                                                          </select>
+							  <div class="checkbox">
+							    <label><input type="checkbox">I agree to the terms of use</label>
+							  </div>
+							  <button type="submit" class="btn btn-default">Submit</button>
+
+							  <div>
+							   	<p>Already have an account?<a href="#" onclick="signIn()">Sign In here</a></p>
+							   </div>
+
+						</form>
+				</div>
+
+				<div class="col-sm-3"></div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

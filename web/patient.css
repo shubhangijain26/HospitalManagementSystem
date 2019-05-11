@@ -1,0 +1,64 @@
+	 
+	 
+
+	@keyframes logoutDivAni{
+		0%{
+			opacity: .4;
+			transform: translate(0,-50px);
+		}
+		100%{
+			opacity: 1;
+			transform: translate(0,200px);
+		}
+	}
+	.logoutDiv{
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			z-index: 2;
+			background-color: rgba(0,0,0,.6);
+			width: 100%;
+			height: 100%;
+		}
+		.logoutDivContent{
+			position: relative;
+			background-color: #6699ff;
+			margin: auto;
+			padding: 50px;
+			animation-name: logoutDivAni;
+			animation-direction: left;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			border-radius: 20px;
+			color: white;
+		}
+
+		#closeBtn {
+			 color: white;
+			 float: right;
+			 font-size: 28px;
+			 font-weight: bold;
+		}
+
+		#closeBtn:hover,
+		#closeBtn:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		.btnF{
+		padding: 10px;
+		cursor: pointer;
+		background-color: white;
+		border: none;
+		color: black;
+		}
+		.btnF:hover{
+			background-color: black;
+			color:white;
+		}
+                
+                p{
+                    text-justify:center;
+                    font-size: 18px;
+                }
