@@ -1,1 +1,1 @@
-# Project2
+# Project2-Hospital Management System
